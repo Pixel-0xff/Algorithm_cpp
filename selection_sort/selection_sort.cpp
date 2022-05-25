@@ -10,14 +10,12 @@ int main()
 	cout << "---selection_sort---" << endl;
 
 	for (int i = 0; i < MAX_INDEX; i++) {
-		int max = arr[0]; size_t index = 0;
-
-		for (int j = 0; j < MAX_INDEX - i; j++) {
-			if (arr[j] > max) max = arr[j], index = j;
+		int max = arr[0]; int index = 0;
+		for (int j = 0; j < MAX_INDEX - i - 1; j++) {
+			if (arr[j] > max)max = arr[j]; index = j;
 		}
-		
 		int tmp = arr[MAX_INDEX - i - 1];
-		arr[MAX_INDEX - i - 1] = max;
+		arr[MAX_INDEX - i - 1] = arr[index];
 		arr[index] = tmp;
 	}
 
